@@ -7,17 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Webpage</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
     <div class="nav-bar">
         <div class="logo">The Skull</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+        <div class="nav-links">
+            <button class="dropbtn" onclick="myFunction()">Menu
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <span class="dropdown-content" id="myDropdown">
+                <a href="#">Home</a></li>
+                <a href="#">About</a></li>
+                <a href="#">Gallery</a></li>
+                <a href="#">Contact</a></li>
+            </span>
+        </div>
+    </div>
     </div>
 
     <!-- Hero section -->
@@ -25,8 +32,7 @@
     <div class="hero-section">
         <div class="hero-content-heading">
             <h3>Let's take a snapshot</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero beatae quod molestias voluptas nam <br>
-                facere numquam quos pariatur repellendus excepturi!</p>
+            <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups!</p>
         </div>
         <div class="hero-content-btn">
             <a href="#">Learn More</a>
@@ -112,6 +118,24 @@
         </div>
         <h6>Copyright &copy; 2021 Zuri Training.</h6>
     </div>
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
